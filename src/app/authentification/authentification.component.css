@@ -1,0 +1,57 @@
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;  /* what is it ? */
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  width: 50%;
+  margin: 20%;
+}
+
+.card {
+  background-color: cadetblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  height: 70%;
+  width: 70%;
+}
+.card-header{
+  margin: 10% 0% 15% 0%;
+}
+
+.form-group{
+  margin: 10% 30% 0% 0%;
+  text-align: right;
+  font-size: 20px;
+}
+
+input{
+  height: 25px;
+}
+
+.button{
+  margin : 20% 0% 10% 0%;
+  height: 40px;
+  width: 180px;
+}
+
