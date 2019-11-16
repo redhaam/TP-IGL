@@ -1,12 +1,18 @@
-<div class="bg d-flex h-100">
+<div class="split left">
+  <div class="centered">
+    <img src="assets/images/angular.svg" alt="angular Logo">  <!-- the application's logo ! -->
+  </div>
+</div>
+
+<div class="split right">
   <div class="container col-xs-12 col-md-4 login  card my-auto">
     <form
       #userForm="ngForm"
       class="card-body mx-auto"
       (submit)="authentification(userForm)"
     >
-      <div>
-        <div class="form-check form-check-inline">
+      <div class="radiobuttons">
+        <div >
           <input
             type="radio"
             name="accountType"
@@ -16,7 +22,7 @@
           />
           <label for="student">Etudiant</label>
         </div>
-        <div class="form-check form-check-inline">
+        <div >
           <input
             type="radio"
             value="teacher"
@@ -26,7 +32,7 @@
           />
           <label for="student">Enseignant</label>
         </div>
-        <div class="form-check form-check-inline">
+        <div>
           <input
             type="radio"
             value="admin"

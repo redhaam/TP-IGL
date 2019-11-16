@@ -1,0 +1,33 @@
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;  /* what is it ? */
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+}
+
+.centered {
+  width: 50%;
+  margin: 20%;
+}
+
+.login {
+  box-shadow: 0 1px 6px 0px rgba(32, 33, 36, 0.28);
+}
+
+.bg {
+
+}
