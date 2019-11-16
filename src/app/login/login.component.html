@@ -46,8 +46,8 @@
           type="text"
           name="email"
           id="email"
-          [ngClass]="{ 'is-invalid': email.errors && email.touched }"
           required
+          [ngClass]="{ 'is-invalid': email.errors && email.touched }"
         />
         <div [hidden]="email.errors?.required" class="invalid-feedback">
           Ce champ est obligatoire
