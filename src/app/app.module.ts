@@ -4,17 +4,26 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { LoginComponent } from "./login/login.component";
-import { AuthentificationComponent } from "./authentification/authentification.component";
-import { NavbarComponent } from './navbar/navbar.component';
-import { EnseignantComponent } from './enseignant/enseignant.component';
+import { LoginComponent } from "./Components/login/login.component";
+import { NavbarComponent } from "./Components/navbar/navbar.component";
+import { EnseignantComponent } from "./Components/enseignant/enseignant.component";
+import { HttpClientModule } from "@angular/common/http";
+import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.component";
+
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AuthentificationComponent, NavbarComponent, EnseignantComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    UiEtudiantComponent,
+    EnseignantComponent,
+    NavbarComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

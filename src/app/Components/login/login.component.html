@@ -49,6 +49,9 @@
           required
           [ngClass]="{ 'is-invalid': email.errors && email.touched }"
         />
+        <div [hidden]="email?.errors?.required" class="invalid-feedback">
+          Ce champ est obligatoire
+        </div>
       </div>
       <div class="form-group mb-0">
         <label for="pasword">Mot de passe</label>
