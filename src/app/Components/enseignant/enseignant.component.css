@@ -1,0 +1,11 @@
+.full {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "sidebar" "content"
+    "footer footer footer";
+}
+.sidebar {
+  grid-area: "sidebar";
+}
