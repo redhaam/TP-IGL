@@ -49,9 +49,6 @@
           required
           [ngClass]="{ 'is-invalid': email.errors && email.touched }"
         />
-        <div [hidden]="email.errors?.required" class="invalid-feedback">
-          Ce champ est obligatoire
-        </div>
       </div>
       <div class="form-group mb-0">
         <label for="pasword">Mot de passe</label>
@@ -67,7 +64,6 @@
       </div>
       <a href="#" class="d-block mb-3">Mot de passe oublié ?</a>
       <input
-        [disabled]="!userForm.valid"
         type="submit"
         value="Connexion"
         class="btn btn-block btn-primary"

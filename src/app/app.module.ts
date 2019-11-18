@@ -6,8 +6,10 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginComponent } from "./login/login.component";
 import { AuthentificationComponent } from "./authentification/authentification.component";
+import { NavbarComponent } from './navbar/navbar.component';
+import { EnseignantComponent } from './enseignant/enseignant.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AuthentificationComponent],
+  declarations: [AppComponent, LoginComponent, AuthentificationComponent, NavbarComponent, EnseignantComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
