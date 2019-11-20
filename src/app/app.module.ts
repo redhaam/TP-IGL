@@ -9,6 +9,7 @@ import { NavbarComponent } from "./Components/navbar/navbar.component";
 import { EnseignantComponent } from "./Components/enseignant/enseignant.component";
 import { HttpClientModule } from "@angular/common/http";
 import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.component";
+import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.compon
     LoginComponent,
     UiEtudiantComponent,
     EnseignantComponent,
-    NavbarComponent
+    NavbarComponent,
+    UiFeedbackComponent
   ],
   imports: [
     BrowserModule,
