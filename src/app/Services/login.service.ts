@@ -18,6 +18,8 @@ export class LoginService {
 
   public getUser(email: string, pwd: string) {
     this.http.get('http://localhost:3000/login').subscribe((users) => {
+      // mbgn8BxGj24D1Kp5
+      alert(users[0].email);
 
     });
   }
