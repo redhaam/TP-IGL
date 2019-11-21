@@ -30,4 +30,4 @@ import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.compon
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

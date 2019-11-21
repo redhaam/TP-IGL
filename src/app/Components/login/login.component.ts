@@ -1,6 +1,8 @@
 import { Component, ViewChild, OnInit, Input } from '@angular/core';
 import { User } from '../../models/user';
 import { NgForm } from '@angular/forms';
+import { LoginService } from '../../Services/login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,17 +10,16 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   @Input() user: User = {
+    id: '',
     email: '',
     password: ''
   };
   @ViewChild('userForm', null) form: any;
-  constructor() { }
+  constructor(public LoginService: LoginService) { }
 
 
   ngOnInit() { }
   authentification(form: NgForm) {
-    if ((form.value.email === 'hm_kadri@esi.dz') && (form.value.password === '1234')) {
-      alert('Login success');
-    }
+    this.LoginService.getUser(form.value.email, form.value.password);
   }
 }
