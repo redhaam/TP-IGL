@@ -4,6 +4,7 @@ import { LoginComponent } from "./Components/login/login.component";
 import { NotFoundComponent } from "./Components/not-found/not-found.component";
 import { EnseignantComponent } from "./Components/enseignant/enseignant.component";
 import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.component";
+import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: "etudiant",
     component: UiEtudiantComponent
+  },
+  {
+    path: "feedback",
+    component: UiFeedbackComponent
   },
   {
     path: "**",
