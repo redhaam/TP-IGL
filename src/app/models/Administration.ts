@@ -1,7 +1,8 @@
 import { User } from './user';
 
 export interface Administration {
-  compte: User;
+  user: User;
   nom: string;
   prenom: string;
+  _id: string;
 }

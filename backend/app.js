@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
+const Administration = require("./models/administration");
 mongoose
   .connect(
-    "mongodb+srv://said:955hq3y1qH1mudS6@cluster0-my0wk.mongodb.net/test?retryWrites=true&w=majority",
+    "mongodb+srv://said:955hq3y1qH1mudS6@cluster0-my0wk.mongodb.net/tpigldb?retryWrites=true&w=majority",
     {
       useUnifiedTopology: true,
       useNewUrlParser: true
@@ -17,6 +17,9 @@ mongoose
     console.log("Failed to connect");
   });
 const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
@@ -30,20 +33,30 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/login", (req, res, next) => {
-  const users = [
+app.use("/login", (req, res, next) => {
+  // const Administration = new Administration({
+  // user: {
+  //   email: "hm_kadri@esi.dz",
+  //   password: "1234"
+  // },
+  //  nom: "said",
+  // prenom: "kadri"
+  // });
+  // console.log(Administration);
+  Administration.find().then(documents => {
+    console.log(documents);
+    res.json(documents);
+  });
+  /* const users = [
     {
-      id: "aaaa",
       email: "yyy",
       password: "zzz"
     },
     {
-      id: "aa222",
       email: "zzz11",
       password: "zzz114"
     }
-  ];
-  res.json(users);
+  ];*/
 });
 
 module.exports = app;

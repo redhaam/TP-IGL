@@ -2,6 +2,7 @@ import { User } from './user';
 
 export interface Etudiant {
   compte: User;
+  _id: string;
   matricule: number;
   nom: string;
   prenom: string;
