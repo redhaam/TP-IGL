@@ -9,6 +9,7 @@ import { NavbarComponent } from "./Components/navbar/navbar.component";
 import { EnseignantComponent } from "./Components/enseignant/enseignant.component";
 import { HttpClientModule } from "@angular/common/http";
 import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.component";
+import { NotFoundComponent } from "./Components/not-found/not-found.component";
 import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.component";
 
 @NgModule({
@@ -18,6 +19,7 @@ import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.compon
     UiEtudiantComponent,
     EnseignantComponent,
     NavbarComponent,
+    NotFoundComponent,
     UiFeedbackComponent
   ],
   imports: [
