@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
+import { Administration } from '../models/Administration'
 
 var user = (user) => {
   this.id = user.id,
@@ -17,9 +18,23 @@ export class LoginService {
 
 
   public getUser(email: string, pwd: string) {
-    this.http.get('http://localhost:3000/login').subscribe((users) => {
-
-      alert(users[0].email);
+    this.http.get('http://localhost:3000/login').subscribe((users: Administration[]) => {
+      var i = 0;
+      var nontrouv = true;
+      while ((i < users.length) && (nontrouv)) {
+        if ((users[i].user.email === email) && (users[i].user.password === pwd)) {
+          nontrouv = false;
+        }
+        else {
+          i++;
+        }
+      }
+      if (nontrouv) {
+        alert('Email or password wrong');
+      }
+      else {
+        alert('Loged in successfuly');
+      }
 
     });
   }
