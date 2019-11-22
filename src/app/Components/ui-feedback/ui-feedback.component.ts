@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { Feedback } from "src/app/models/Feedback";
 
 @Component({
   selector: "app-ui-feedback",
@@ -6,6 +7,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./ui-feedback.component.css"]
 })
 export class UiFeedbackComponent implements OnInit {
+  @Input() feedback: Feedback = {
+    id: "",
+    anneDetude: "",
+    nomModule: "",
+    contenu: ""
+  };
   constructor() {}
 
   ngOnInit() {}
