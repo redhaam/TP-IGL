@@ -1,31 +1,51 @@
-<div class="d-flex h-100 align-items-center">
-  <form class="form-group">
-    <div class="">
-      <label for="exampleInputEmail1">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-      />
-      <small id="emailHelp" class="form-text text-muted"
-        >We'll never share your email with anyone else.</small
-      >
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="exampleInputPassword1"
-        placeholder="Password"
-      />
-    </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<div class="d-flex h-100 flex-column">
+  <app-navbar></app-navbar>
+  <div
+    class="container col-xs-12 col-md-4 shadow p-3 card my-auto "
+    style="flex-shrink: 1fr;"
+  >
+    <form
+      class="card-body my-auto"
+      #formulaire="ngForm"
+      (submit)="onSubmit(form)"
+    >
+      <div class="form-group">
+        <label for="module">Nom du module</label>
+        <input
+          #nomModule="ngModel"
+          [(ngModel)]="feedback.nomModule"
+          type="text"
+          class="form-control"
+          id="module"
+          name="nomModule"
+          placeholder="Nom du module "
+        />
+      </div>
+      <div class="form-group">
+        <label for="niveau">Niveau d'etude</label>
+        <input
+          #anneDetude="ngModel"
+          [(ngModel)]="feedback.anneDetude"
+          type="text"
+          class="form-control"
+          id="niveau"
+          name="anneDetude"
+          placeholder="Niveau d'etude"
+        />
+      </div>
+      <div class="form-group">
+        <label for="feedback">Votre feedback</label>
+        <textarea
+          #content="ngModel"
+          [(ngModel)]="feedback.contenu"
+          class="form-control"
+          id="feedback"
+          rows="5"
+          name="contenu"
+          placeholder="Feedback"
+        ></textarea>
+      </div>
+      <input class="btn btn-primary " type="submit" value="Submit" />
+    </form>
+  </div>
 </div>
