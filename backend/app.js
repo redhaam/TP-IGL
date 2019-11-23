@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Administration = require("./models/administration");
+const Feedback = require("./models/feedback");
 mongoose
   .connect(
     "mongodb+srv://said:955hq3y1qH1mudS6@cluster0-my0wk.mongodb.net/tpigldb?retryWrites=true&w=majority",
@@ -32,8 +33,19 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.post("/feedback/submit", (req, res, next) => {
+  const feedback = new Feedback({
+    nomModule: req.body.nomModule,
+    anneDetude: req.body.anneDetude,
+    contenu: req.body.contenu
+  });
+  feedback.save(); // saving the feedback to the database
+  res.status(201).json({
+    message: "feedback added successfuly"
+  });
+});
 
-app.use("/login", (req, res, next) => {
+app.use("/login/admin", (req, res, next) => {
   // const Administration = new Administration({
   // user: {
   //   email: "hm_kadri@esi.dz",
