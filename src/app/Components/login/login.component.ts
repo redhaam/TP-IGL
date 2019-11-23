@@ -10,7 +10,6 @@ import { LoginService } from "../../Services/login.service";
 })
 export class LoginComponent implements OnInit {
   @Input() user: User = {
-    id: "",
     email: "",
     password: ""
   };
