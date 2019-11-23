@@ -1,11 +1,27 @@
 .full {
   height: 100vh;
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 230px 1fr;
   grid-template-areas:
     "sidebar" "content"
     "footer footer footer";
 }
 .sidebar {
   grid-area: "sidebar";
+  font-size: 12px;
+}
+
+.content {
+  grid-area: "content";
+}
+.list-group > * {
+  background-color: transparent;
+  color: white;
+}
+
+.list-group-item:hover {
+  background-color: turquoise;
+}
+.cntn {
+  justify-content: space-between; /* horizontal*/
 }

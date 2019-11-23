@@ -10,6 +10,7 @@ import { LoginService } from "../../Services/login.service";
 })
 export class LoginComponent implements OnInit {
   @Input() user: User = {
+    id: "",
     email: "",
     password: ""
   };
@@ -18,6 +19,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
   authentification(form: NgForm) {
-    this.loginService.getUser(form.value.email, form.value.password);
+    if (form.valid) {
+      this.loginService.getUser(form.value.email, form.value.password);
+    }
   }
 }

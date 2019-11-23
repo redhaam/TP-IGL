@@ -1,6 +1,6 @@
 export interface Feedback {
   id: string;
   nomModule: string;
-  AnneDetude: string;
+  anneDetude: string;
   contenu: string;
 }

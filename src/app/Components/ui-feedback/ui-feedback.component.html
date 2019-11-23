@@ -1,38 +1,51 @@
 <div class="d-flex h-100 flex-column">
   <app-navbar></app-navbar>
   <div
-    class="container col-xs-12 col-md-4 feedbac shadow p-3 card my-auto "
+    class="container col-xs-12 col-md-4 shadow p-3 card my-auto "
     style="flex-shrink: 1fr;"
   >
-    <form class="card-body my-auto">
+    <form
+      class="card-body my-auto"
+      #formulaire="ngForm"
+      (submit)="onSubmit(form)"
+    >
       <div class="form-group">
         <label for="module">Nom du module</label>
         <input
+          #nomModule="ngModel"
+          [(ngModel)]="feedback.nomModule"
           type="text"
           class="form-control"
           id="module"
+          name="nomModule"
           placeholder="Nom du module "
         />
       </div>
       <div class="form-group">
         <label for="niveau">Niveau d'etude</label>
         <input
+          #anneDetude="ngModel"
+          [(ngModel)]="feedback.anneDetude"
           type="text"
           class="form-control"
           id="niveau"
+          name="anneDetude"
           placeholder="Niveau d'etude"
         />
       </div>
       <div class="form-group">
         <label for="feedback">Votre feedback</label>
         <textarea
+          #content="ngModel"
+          [(ngModel)]="feedback.contenu"
           class="form-control"
           id="feedback"
           rows="5"
+          name="contenu"
           placeholder="Feedback"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <input class="btn btn-primary " type="submit" value="Submit" />
     </form>
   </div>
 </div>
