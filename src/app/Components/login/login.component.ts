@@ -10,17 +10,20 @@ import { LoginService } from "../../Services/login.service";
 })
 export class LoginComponent implements OnInit {
   @Input() user: User = {
-    id: "",
     email: "",
     password: ""
   };
   @ViewChild("userForm", null) form: any;
-  constructor(public loginService: LoginService) {}
+  constructor(public loginService: LoginService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
   authentification(form: NgForm) {
     if (form.valid) {
       this.loginService.getUser(form.value.email, form.value.password);
     }
   }
+
+
 }
+
