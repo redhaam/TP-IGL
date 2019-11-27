@@ -14,8 +14,8 @@ export interface Etudiant {
   nom: string;
   /** Préom de l'étudiant */
   prenom: string;
-  /** Nom du groupe auquel appartient l'étudiant */
-  nom_gp: string;
+  /** Numero du groupe auquel appartient l'étudiant */
+  num_gp: number;
   /** Nombre d'absences total de l'étudiant (tous modules confondus) */
   nb_absences: number;
   /** Moyenne générale de l'étudiant */
