@@ -3,7 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const Administration = require("./models/administration");
 const Feedback = require("./models/feedback");
-mongoose
+const Etudiant = require("./models/etudiant");
+var db = mongoose
   .connect(
     "mongodb+srv://said:955hq3y1qH1mudS6@cluster0-my0wk.mongodb.net/tpigldb?retryWrites=true&w=majority",
     {
@@ -42,6 +43,32 @@ app.post("/feedback/submit", (req, res, next) => {
   feedback.save(); // saving the feedback to the database
   res.status(201).json({
     message: "feedback added successfuly"
+  });
+});
+
+app.post("/Add/Etudiant", (req, res, next) => {
+  const etudiant = new Etudiant({
+    user: {
+      email: req.body.user.email,
+      password: req.body.user.password //
+    },
+    // matricule
+    nom: req.body.nom,
+    prenom: req.body.prenom,
+    anneEtude: req.body.anneEtude,
+    numgrp: Math.floor(Math.random() * 10) + 1,
+    nb_absences: 0,
+    moyenne: 0,
+    matricule: "125/2019"
+  });
+  //   Etudiant.count({}, function( err, count){
+  //     console.log( "Number of students:", count );
+  // })
+  //   etudiant.count
+  console.log(etudiant);
+  etudiant.save(); // saving the feedback to the database
+  res.status(201).json({
+    message: "Student added successfuly"
   });
 });
 

@@ -22,7 +22,7 @@ export class StudentFormComponent implements OnInit {
     moyenne: null,
     niveauDEtude: null,
     nb_absences: 0,
-    nom_gp: ""
+    num_gp: null
   };
   constructor(private studentService: StudentService) {}
 
@@ -30,7 +30,7 @@ export class StudentFormComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      this.studentService.addStudent(form.value);
+      this.studentService.addStudent(this.student);
     }
   }
 }
