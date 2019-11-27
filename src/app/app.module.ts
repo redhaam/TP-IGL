@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.component";
 import { NotFoundComponent } from "./Components/not-found/not-found.component";
 import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.component";
+import { StudentFormComponent } from "./Components/student-form/student-form.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.compon
     EnseignantComponent,
     NavbarComponent,
     NotFoundComponent,
-    UiFeedbackComponent
+    UiFeedbackComponent,
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.compon
     FormsModule,
     HttpClientModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

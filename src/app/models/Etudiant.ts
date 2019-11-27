@@ -1,4 +1,4 @@
-import { User } from './user';
+import { User } from "./user";
 
 export interface Etudiant {
   compte: User;
@@ -6,6 +6,7 @@ export interface Etudiant {
   matricule: number;
   nom: string;
   prenom: string;
+  niveauDEtude: number;
   nom_gp: string;
   nb_absences: number;
   moyenne: number;
