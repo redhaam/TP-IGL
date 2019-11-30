@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+/**
+ * Ce fichier représente l'interface initiale de l'étudiant
+ */
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-ui-etudiant',
-  templateUrl: './ui-etudiant.component.html',
-  styleUrls: ['./ui-etudiant.component.css']
+  selector: "app-ui-etudiant",
+  templateUrl: "./ui-etudiant.component.html",
+  styleUrls: ["./ui-etudiant.component.css"]
 })
 export class UiEtudiantComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
