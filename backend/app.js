@@ -66,11 +66,11 @@ app.post("/Add/Etudiant", (req, res, next) => {
     // matricule
     nom: req.body.nom,
     prenom: req.body.prenom,
-    anneEtude: req.body.anneEtude,
-    numgrp: Math.floor(Math.random() * 10) + 1,
+    anneEtude: req.body.niveauDEtude,
+    num_gp: Math.floor(Math.random() * 10) + 1,
     nb_absences: 0,
     moyenne: 0,
-    matricule: "125/2019"
+    matricule: 19 + "/" + Math.floor(Math.random() * 1000) + 1
   });
   //   Etudiant.count({}, function( err, count){
   //     console.log( "Number of students:", count );
