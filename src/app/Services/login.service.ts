@@ -12,13 +12,14 @@ var user = (user) => {
 @Injectable({
   providedIn: 'root'
 })
+
 export class LoginService {
   constructor(private http: HttpClient) { }
 
 
 
   public getUser(email: string, pwd: string) {
-    this.http.get('http://localhost:3000/login').subscribe((users: Administration[]) => {
+    this.http.get('http://localhost:3000/login/admin').subscribe((users: Administration[]) => {
       var i = 0;
       var nontrouv = true;
       while ((i < users.length) && (nontrouv)) {

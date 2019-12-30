@@ -24,9 +24,9 @@ export class StudentFormComponent implements OnInit {
     nb_absences: 0,
     num_gp: null
   };
-  constructor(private studentService: StudentService) {}
+  constructor(private studentService: StudentService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
