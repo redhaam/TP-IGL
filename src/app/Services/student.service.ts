@@ -10,6 +10,7 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   public addStudent(student: Etudiant) {
+    console.log(student);
     this.http
       .post<{ message: string }>(
         "http://localhost:3000/Add/Etudiant",
