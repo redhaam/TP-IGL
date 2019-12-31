@@ -60,7 +60,7 @@ app.post("/feedback/submit", (req, res, next) => {
 app.post("/Add/Etudiant", (req, res, next) => {
   const etudiant = new Etudiant({
     compte: {
-      email: "azer",
+      email: req.body.compte.email ,
       password: "12546"
     },
     // matricule
