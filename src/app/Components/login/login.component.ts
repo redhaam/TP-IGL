@@ -17,9 +17,9 @@ export class LoginComponent implements OnInit {
     password: ""
   };
   @ViewChild("userForm", null) form: any;
-  constructor(public loginService: LoginService) {}
+  constructor(public loginService: LoginService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   /**
    * Fonction permettant de récupérer le compte de l'utilisateur
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
    */
   authentification(form: NgForm) {
     if (form.valid) {
-      this.loginService.getUser(form.value.email, form.value.password);
+      this.loginService.getUser(form.value.email, form.value.password, 2);
     }
   }
 }
