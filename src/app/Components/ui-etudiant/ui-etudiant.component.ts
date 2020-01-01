@@ -14,7 +14,7 @@ export class UiEtudiantComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit() {
-    if (!this.loginService.id) {
+    if (!this.loginService) {
       this.router.navigate([""]);
     }
   }
