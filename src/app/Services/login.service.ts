@@ -58,6 +58,7 @@ export class LoginService {
           if (nontrouv) {
             return null;
           } else {
+            this.id = users[i]._id;
             return users[i]._id;
           }
         });

@@ -3,6 +3,8 @@ import { NgForm } from "@angular/forms";
 import { Etudiant } from "src/app/models/Etudiant";
 import { StudentService } from "src/app/Services/student.service";
 import { FormsModule } from "@angular/forms";
+import { LoginService } from "src/app/Services/login.service";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-student-form",
   templateUrl: "./student-form.component.html",
@@ -24,9 +26,17 @@ export class StudentFormComponent implements OnInit {
     nb_absences: 0,
     num_gp: null
   };
-  constructor(private studentService: StudentService) {}
+  constructor(
+    private studentService: StudentService,
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (!this.loginService.id) {
+      this.router.navigate([""]);
+    }
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
