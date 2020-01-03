@@ -6,19 +6,25 @@
         <ul class="list-group">
           <li class="list-group-item">
             <a class="d-flex" style="padding: 10px;">
-              <i class="material-icons">dashboard</i>
+              <div class="material-icons">
+                <img src="../../../assets/dashboard.png" />
+              </div>
               <p style="margin-left: 10px;">Tableau de bord</p>
             </a>
           </li>
           <li class="list-group-item">
             <a class="d-flex" style="padding: 10px;">
-              <i class="material-icons">account_box</i>
+              <div class="material-icons">
+                <img src="../../../assets/account.png" />
+              </div>
               <p style="margin-left: 10px;">Mon profil</p>
             </a>
           </li>
           <li class="list-group-item">
             <a class="d-flex" style="padding: 10px;">
-              <i class="material-icons">mail_outline</i>
+              <div class="material-icons">
+                <img src="../../../assets/messagerie.png" />
+              </div>
               <p style="margin-left: 10px;">Messagerie</p>
             </a>
           </li>
@@ -69,7 +75,9 @@
             <p class="card-text">
               Ajouter un compte étudiant.
             </p>
-            <a href="#" class="btn btn-primary">Ajouter</a>
+            <a [routerLink]="'ajout-etudiant'" class="btn btn-primary"
+              >Ajouter</a
+            >
           </div>
         </div>
 
