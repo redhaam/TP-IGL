@@ -6,7 +6,7 @@ import { EnseignantComponent } from "./Components/enseignant/enseignant.componen
 import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.component";
 import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.component";
 import { StudentFormComponent } from "./Components/student-form/student-form.component";
-//import { UiAdminComponent } from "./Components/ui-admin/ui-admin.component";
+import { UiAdminComponent } from "./Components/ui-admin/ui-admin.component";
 const routes: Routes = [
   {
     path: "",
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   { path: "login", component: LoginComponent },
   { path: "enseignant", component: EnseignantComponent },
-  //{ path: "admin", component: UiAdminComponent },
+  { path: "admin", component: UiAdminComponent },
   {
     path: "etudiant",
     component: UiEtudiantComponent

@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { User } from "../models/user";
 import { Administration } from "../models/Administration";
 import { Etudiant } from "../models/Etudiant";
 import { Router } from "@angular/router";
@@ -17,7 +16,7 @@ var user = user => {
 export class LoginService {
   constructor(private http: HttpClient, private router: Router) {}
   id: string;
-
+  currentuser: string;
   public checkLogin() {
     if (!this.id) {
       this.router.navigate([""]);
@@ -42,8 +41,10 @@ export class LoginService {
             }
           }
           if (nontrouv) {
+            this.currentuser = "";
             return "";
           } else {
+            this.currentuser = users[i].nom + " " + users[i].prenom;
             this.id = users[i]._id;
             return users[i]._id;
           }
@@ -64,9 +65,11 @@ export class LoginService {
             }
           }
           if (nontrouv) {
+            this.currentuser = "";
             return "";
           } else {
             this.id = users[i]._id;
+            this.currentuser = users[i].nom + " " + users[i].prenom;
             return users[i]._id;
           }
         });

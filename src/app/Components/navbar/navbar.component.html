@@ -1,25 +1,48 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand navbar-dark bg-dark mb-0">
   <a href="/" class="navbar-brand">TP IGL</a>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item my-auto mr-3">
-      <a class="text-light" href="javascript:void(0);"
-        ><i class="fa fa-bell" aria-hidden="true"></i
-      ></a>
-    </li>
-    <li class="nav-item ">
-      <div class="dropdown">
-        <button
-          class="btn nav-link dropdown-toggle"
-          role="button"
+  =======
+  <nav class="navbar navbar-expand mb-0" style="background-color: #17252A;">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/logo-white.png" alt="ESI Schooling" />
+    </a>
+    <!-- <a href="/" class="navbar-brand">TP IGL</a> -->
+    >>>>>>> 72a334411ab65bad1ec06d89b74c1ef2b9642592
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item my-auto mr-3">
+        <a class="text-light" href="javascript:void(0);"
+          ><i class="fa fa-bell" aria-hidden="true"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <div class="material-icons">
+          <img
+            src="../../../assets/user_avatar.png"
+            height="34px"
+            width="34px"
+          />
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href=""
           id="navbarDropdown"
+          role="button"
           data-toggle="dropdown"
-        ></button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Activités</a>
-          <a class="dropdown-item" href="#">Reglages</a>
+          aria-haspopup="true"
+          aria-expanded="false"
+          style="color: white;"
+        >
+          {{ currentUserName }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Paramètres</a>
+          <a class="dropdown-item" href="#">Aide</a>
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Se deconnecter</a>
         </div>
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </nav>
 </nav>
