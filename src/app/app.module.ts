@@ -12,7 +12,7 @@ import { UiEtudiantComponent } from "./Components/ui-etudiant/ui-etudiant.compon
 import { NotFoundComponent } from "./Components/not-found/not-found.component";
 import { UiFeedbackComponent } from "./Components/ui-feedback/ui-feedback.component";
 import { StudentFormComponent } from "./Components/student-form/student-form.component";
-import { UiAdministrationComponent } from "./Components/ui-administration/ui-administration.component";
+import { UiAdminComponent } from "./Components/ui-admin/ui-admin.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { UiAdministrationComponent } from "./Components/ui-administration/ui-adm
     NotFoundComponent,
     UiFeedbackComponent,
     StudentFormComponent,
-    UiAdministrationComponent
+    UiAdminComponent
   ],
   imports: [
     BrowserModule,
