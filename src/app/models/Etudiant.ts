@@ -6,7 +6,7 @@ import { User } from "./user";
 export interface Etudiant {
   /** Détails du compte de l'étudiant */
   compte: User;
-  /** identifiant pour repérer l'objet dans la base de donnée */
+  /** identifiant pour repérer l'objet dans la base de données */
   _id: string;
   /** Matricule de l'étudiant. Identifiant unique */
   matricule: number;
@@ -14,6 +14,7 @@ export interface Etudiant {
   nom: string;
   /** Préom de l'étudiant */
   prenom: string;
+  /** Niveau d'étude de l'étudiant */
   niveauDEtude: number;
   /** Numero du groupe auquel appartient l'étudiant */
   num_gp: number;

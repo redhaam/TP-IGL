@@ -6,7 +6,7 @@ export interface Feedback {
   _id: string;
   /** Nom du module concerné par le feedback */
   nomModule: string;
-  /** Niveau d'étude de l'étudiants */
+  /** Niveau d'étude de l'étudiant */
   anneDetude: string;
   /** Corps du feedback */
   contenu: string;

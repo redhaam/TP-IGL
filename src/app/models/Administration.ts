@@ -9,6 +9,6 @@ export interface Administration {
   nom: string;
   /** Prénom de l'administrateur */
   prenom: string;
-  /** identifiant pour repérer l'objet dans la base de donnée */
+  /** identifiant pour repérer l'objet dans la base de données */
   _id: string;
 }
