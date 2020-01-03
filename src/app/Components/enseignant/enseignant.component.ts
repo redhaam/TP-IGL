@@ -3,6 +3,7 @@
  */
 
 import { Component, OnInit } from "@angular/core";
+import { LoginService } from "src/app/Services/login.service";
 
 @Component({
   selector: "app-enseignant",
@@ -10,7 +11,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./enseignant.component.css"]
 })
 export class EnseignantComponent implements OnInit {
-  constructor() {}
+  constructor(private loginService: LoginService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loginService.checkLogin();
+  }
 }

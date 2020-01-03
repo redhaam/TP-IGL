@@ -1,13 +1,15 @@
 <div class="bg d-flex h-100">
   <div class="container col-xs-12 col-md-4 login  card my-auto">
+    <h4>Connectez vous</h4>
     <form
       #userForm="ngForm"
-      class="card-body mx-auto"
+      class="card-body "
       (submit)="authentification(userForm)"
     >
       <div>
         <div class="form-check form-check-inline">
           <input
+            (change)="radiochange($event)"
             type="radio"
             name="accountType"
             value="student"
@@ -18,6 +20,7 @@
         </div>
         <div class="form-check form-check-inline">
           <input
+            (change)="radiochange($event)"
             type="radio"
             value="teacher"
             name="accountType"
@@ -28,6 +31,7 @@
         </div>
         <div class="form-check form-check-inline">
           <input
+            (change)="radiochange($event)"
             type="radio"
             value="admin"
             name="accountType"

@@ -6,6 +6,8 @@ import { Component, OnInit, Input, ViewChild } from "@angular/core";
 import { Feedback } from "src/app/models/Feedback";
 import { NgForm } from "@angular/forms";
 import { FeedbackService } from "../../Services/feedback.service";
+import { LoginService } from "src/app/Services/login.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-ui-feedback",
@@ -21,9 +23,14 @@ export class UiFeedbackComponent implements OnInit {
   };
 
   @ViewChild("formulaire", null) form: any;
-  constructor(public feedbackservice: FeedbackService) {}
+  constructor(
+    private loginService: LoginService,
+    public feedbackservice: FeedbackService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loginService.checkLogin();
+  }
 
   /**
    * Validation et envoi du feedback

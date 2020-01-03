@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "../models/user";
 import { Administration } from "../models/Administration";
 import { Etudiant } from "../models/Etudiant";
+import { Router } from "@angular/router";
 
 var user = user => {
   (this.id = user.id),
@@ -14,10 +15,16 @@ var user = user => {
   providedIn: "root"
 })
 export class LoginService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   id: string;
 
-  public getUser(email: string, pwd: string, userType: number) {
+  public checkLogin() {
+    if (!this.id) {
+      this.router.navigate([""]);
+    }
+  }
+
+  public getUser(email: string, pwd: string, userType: number): string {
     let i = 0;
     let nontrouv = true;
     if (userType === 1) {
@@ -35,8 +42,9 @@ export class LoginService {
             }
           }
           if (nontrouv) {
-            return null;
+            return "";
           } else {
+            this.id = users[i]._id;
             return users[i]._id;
           }
         });
@@ -56,12 +64,13 @@ export class LoginService {
             }
           }
           if (nontrouv) {
-            return null;
+            return "";
           } else {
             this.id = users[i]._id;
             return users[i]._id;
           }
         });
     }
+    return this.id;
   }
 }

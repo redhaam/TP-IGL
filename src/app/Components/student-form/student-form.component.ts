@@ -28,14 +28,11 @@ export class StudentFormComponent implements OnInit {
   };
   constructor(
     private studentService: StudentService,
-    private loginService: LoginService,
-    private router: Router
+    private loginService: LoginService
   ) {}
 
   ngOnInit() {
-    if (!this.loginService.id) {
-      this.router.navigate([""]);
-    }
+    this.loginService.checkLogin();
   }
 
   onSubmit(form: NgForm) {
