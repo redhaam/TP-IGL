@@ -15,13 +15,11 @@ import { AdminService } from "src/app/Services/admin.service";
 export class NavbarComponent implements OnInit {
   currentUserName: string;
 
-  constructor(
-    private studentService: StudentService,
-    private adminService: AdminService
-  ) {
-    this.currentUserName =
-      this.studentService.etudiant.nom + this.studentService.etudiant.prenom; //
+  constructor(private loginService: LoginService) {
+    //
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currentUserName = this.loginService.currentuser;
+  }
 }
