@@ -17,7 +17,7 @@ export class LoginService {
   constructor(private http: HttpClient) {}
   id: string;
 
-  public getUser(email: string, pwd: string, userType: number) {
+  public getUser(email: string, pwd: string, userType: number): string {
     let i = 0;
     let nontrouv = true;
     if (userType === 1) {
@@ -35,8 +35,9 @@ export class LoginService {
             }
           }
           if (nontrouv) {
-            return null;
+            return "";
           } else {
+            this.id = users[i]._id;
             return users[i]._id;
           }
         });
@@ -56,12 +57,13 @@ export class LoginService {
             }
           }
           if (nontrouv) {
-            return null;
+            return "";
           } else {
             this.id = users[i]._id;
             return users[i]._id;
           }
         });
     }
+    return "";
   }
 }

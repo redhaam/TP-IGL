@@ -5,6 +5,7 @@ import { Component, ViewChild, OnInit, Input } from "@angular/core";
 import { User } from "../../models/user";
 import { NgForm } from "@angular/forms";
 import { LoginService } from "../../Services/login.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -16,10 +17,16 @@ export class LoginComponent implements OnInit {
     email: "",
     password: ""
   };
+  userType: string = "";
   @ViewChild("userForm", null) form: any;
-  constructor(public loginService: LoginService) {}
+  constructor(public loginService: LoginService, private router: Router) {}
 
   ngOnInit() {}
+
+  radiochange(e: any) {
+    this.userType = e.target.value;
+    console.log(e.target.value);
+  }
 
   /**
    * Fonction permettant de récupérer le compte de l'utilisateur
@@ -27,7 +34,44 @@ export class LoginComponent implements OnInit {
    */
   authentification(form: NgForm) {
     if (form.valid) {
-      this.loginService.getUser(form.value.email, form.value.password, 2);
+      let userType: number;
+      switch (this.userType) {
+        case "student":
+          userType = 2;
+          break;
+        case "teacher":
+          userType = 3;
+          break;
+        case "admin":
+          userType = 1;
+          break;
+        default:
+          console.log(this.userType);
+      }
+      console.log(userType);
+      let id = this.loginService.getUser(
+        form.value.email,
+        form.value.password,
+        userType
+      );
+      console.log(id);
+
+      if (id) {
+        console.log("connected");
+        switch (userType) {
+          case 1:
+            this.router.navigate(["admin"]);
+            break;
+          case 2:
+            this.router.navigate(["etudiant"]);
+            break;
+          case 3:
+            this.router.navigate(["enseignant"]);
+            break;
+        }
+      } else {
+        console.log("error logging");
+      }
     }
   }
 }
