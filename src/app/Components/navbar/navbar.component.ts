@@ -3,6 +3,7 @@
  * Affichée dans toutes les interfaces de l'application
  */
 import { Component, OnInit } from "@angular/core";
+import { LoginService } from "src/app/Services/login.service";
 
 @Component({
   selector: "app-navbar",
@@ -10,7 +11,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./navbar.component.css"]
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  currentUserName: string;
+
+  constructor(private loginService: LoginService) {
+    this.currentUserName = this.loginService.currentuser; //
+  }
 
   ngOnInit() {}
 }

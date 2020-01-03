@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Administration = require("./models/administration");
 const Feedback = require("./models/feedback");
 const Etudiant = require("./models/etudiant");
-/*mongoose
+mongoose
   .connect(
     "mongodb+srv://said:955hq3y1qH1mudS6@cluster0-my0wk.mongodb.net/tpigldb?retryWrites=true&w=majority",
     {
@@ -17,8 +17,8 @@ const Etudiant = require("./models/etudiant");
   })
   .catch(err => {
     console.log(err);
-  });*/
-const url = "mongodb://127.0.0.1:27017/tpigl";
+  });
+/*const url = "mongodb://127.0.0.1:27017/tpigl";
 mongoose.connect(url, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.once("open", _ => {
@@ -28,7 +28,7 @@ db.once("open", _ => {
 db.on("error", err => {
   console.error("connection error:", err);
 });
-
+*/
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

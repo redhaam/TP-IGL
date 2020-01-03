@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { User } from "../models/user";
 import { Administration } from "../models/Administration";
 import { Etudiant } from "../models/Etudiant";
 
@@ -14,6 +13,7 @@ var user = user => {
   providedIn: "root"
 })
 export class LoginService {
+  currentuser: string;
   constructor(private http: HttpClient) {}
   id: string;
 
@@ -35,8 +35,10 @@ export class LoginService {
             }
           }
           if (nontrouv) {
+            this.currentuser = null;
             return null;
           } else {
+            this.currentuser = users[i].nom + " " + users[i].prenom;
             return users[i]._id;
           }
         });
@@ -56,9 +58,11 @@ export class LoginService {
             }
           }
           if (nontrouv) {
+            this.currentuser = null;
             return null;
           } else {
             this.id = users[i]._id;
+            this.currentuser = users[i].nom + " " + users[i].prenom;
             return users[i]._id;
           }
         });
