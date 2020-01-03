@@ -4,6 +4,8 @@
  */
 import { Component, OnInit } from "@angular/core";
 import { LoginService } from "src/app/Services/login.service";
+import { StudentService } from "src/app/Services/student.service";
+import { AdminService } from "src/app/Services/admin.service";
 
 @Component({
   selector: "app-navbar",
@@ -13,8 +15,12 @@ import { LoginService } from "src/app/Services/login.service";
 export class NavbarComponent implements OnInit {
   currentUserName: string;
 
-  constructor(private loginService: LoginService) {
-    this.currentUserName = this.loginService.currentuser; //
+  constructor(
+    private studentService: StudentService,
+    private adminService: AdminService
+  ) {
+    this.currentUserName =
+      this.studentService.etudiant.nom + this.studentService.etudiant.prenom; //
   }
 
   ngOnInit() {}

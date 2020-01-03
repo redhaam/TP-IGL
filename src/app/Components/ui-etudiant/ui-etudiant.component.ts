@@ -3,7 +3,8 @@
  */
 import { Component, OnInit } from "@angular/core";
 import { LoginService } from "src/app/Services/login.service";
-import { Router } from "@angular/router";
+import { Etudiant } from "src/app/models/Etudiant";
+import { StudentService } from "src/app/Services/student.service";
 
 @Component({
   selector: "app-ui-etudiant",
@@ -11,9 +12,14 @@ import { Router } from "@angular/router";
   styleUrls: ["./ui-etudiant.component.css"]
 })
 export class UiEtudiantComponent implements OnInit {
-  constructor(private loginService: LoginService) {}
+  student: Etudiant;
+  constructor(
+    private loginService: LoginService,
+    private studentService: StudentService
+  ) {}
 
   ngOnInit() {
     this.loginService.checkLogin();
+    this.student = this.studentService.etudiant;
   }
 }
