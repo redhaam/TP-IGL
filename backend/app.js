@@ -18,16 +18,16 @@ mongoose
   .catch(err => {
     console.log(err);
   });
-// const url = "mongodb://127.0.0.1:27017/tpigl";
-// mongoose.connect(url, { useNewUrlParser: true });
-// const db = mongoose.connection;
-// db.once("open", _ => {
-//   console.log("Database connected:", url);
-// });
+/*const url = "mongodb://127.0.0.1:27017/tpigl";
+mongoose.connect(url, { useNewUrlParser: true });
+const db = mongoose.connection;
+db.once("open", _ => {
+  console.log("Database connected:", url);
+});
 
-// db.on("error", err => {
-//   console.error("connection error:", err);
-// });
+db.on("error", err => {
+  console.error("connection error:", err);
+});*/
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
@@ -46,6 +46,7 @@ app.use((req, res, next) => {
   next();
 });
 app.post("/feedback/submit", (req, res, next) => {
+  // La requete d'insertion d'un feedback
   const feedback = new Feedback({
     nomModule: req.body.nomModule,
     anneDetude: req.body.anneDetude,
@@ -58,6 +59,7 @@ app.post("/feedback/submit", (req, res, next) => {
 });
 
 app.post("/Add/Etudiant", (req, res, next) => {
+  // La requete d'insertion d'un étudiant
   const etudiant = new Etudiant({
     compte: {
       email: req.body.compte.email,
@@ -84,6 +86,7 @@ app.post("/Add/Etudiant", (req, res, next) => {
 });
 
 app.use("/login/admin", (req, res, next) => {
+  /// Une requete qui retourne la liste des administrateurs
   Administration.find().then(documents => {
     console.log(documents);
     res.json(documents);
@@ -91,6 +94,7 @@ app.use("/login/admin", (req, res, next) => {
 });
 
 app.use("/login/student", (req, res, next) => {
+  //Une requete qui retourne la liste des etudiants
   Etudiant.find().then(documents => {
     console.log(documents);
     res.json(documents);
