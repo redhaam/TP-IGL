@@ -1,68 +1,78 @@
-<div
-  class="container col-xs-12 col-md-4 shadow p-3 card my-auto "
-  style="flex-shrink: 1fr;"
->
-  <h1 class="mx-auto">Ajouter un etudiant</h1>
-  <form
-    #formulaire="ngForm"
-    (submit)="onSubmit(formulaire)"
-    class="card-body my-auto"
+<div class="h-100 d-flex flex-column" style="background-color: #3AAFA9;">
+  <app-navbar></app-navbar>
+  <div
+    class="container col-xs-12 col-md-4 shadow p-3 card my-auto "
+    style="flex-shrink: 1fr; background-color: #2B7A78; border-color: #17252A;"
   >
-    <div class="form-group">
-      <label for="email">Adresse email :<span class="required">*</span></label>
+    <h1 class="mx-auto">Ajouter un etudiant</h1>
+    <form
+      #formulaire="ngForm"
+      (submit)="onSubmit(formulaire)"
+      class="card-body my-auto"
+    >
+      <div class="form-group">
+        <label for="email"
+          >Adresse email :<span class="required">*</span></label
+        >
+        <input
+          type="email"
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          name="email"
+          id="email"
+          [(ngModel)]="student.compte.email"
+          class="form-control"
+          minlength="2"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom :<span class="required">*</span></label>
+        <input
+          type="text"
+          name="nom"
+          id="nom"
+          [(ngModel)]="student.nom"
+          class="form-control"
+          minlength="2"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prenom :<span class="required">*</span> </label>
+        <input
+          type="text"
+          name="prenom"
+          id="prenom"
+          [(ngModel)]="student.prenom"
+          class="form-control"
+          minlength="2"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="niveau"
+          >Niveau d'etude :<span class="required">*</span></label
+        >
+        <select
+          class="browser-default custom-select "
+          name="niveauEtude"
+          id="niveau"
+          [(ngModel)]="student.niveauDEtude"
+        >
+          <option disabled selected>choisir niveau d'etude</option>
+          <option value="1">1 ere année</option>
+          <option value="2">2 eme année</option>
+          <option value="3">3 eme année</option>
+          <option value="4">4 eme année</option>
+          <option value="5">5 eme année</option>
+        </select>
+      </div>
       <input
-        type="email"
-        pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-        name="email"
-        id="email"
-        [(ngModel)]="student.compte.email"
-        class="form-control"
-        minlength="2"
-        required
+        class="btn btn-primary btn-block "
+        type="submit"
+        value="Submit"
+        style="background-color: #17252A;"
       />
-    </div>
-    <div class="form-group">
-      <label for="nom">Nom :<span class="required">*</span></label>
-      <input
-        type="text"
-        name="nom"
-        id="nom"
-        [(ngModel)]="student.nom"
-        class="form-control"
-        minlength="2"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label for="prenom">Prenom :<span class="required">*</span> </label>
-      <input
-        type="text"
-        name="prenom"
-        id="prenom"
-        [(ngModel)]="student.prenom"
-        class="form-control"
-        minlength="2"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label for="niveau"
-        >Niveau d'etude :<span class="required">*</span></label
-      >
-      <select
-        class="browser-default custom-select "
-        name="niveauEtude"
-        id="niveau"
-        [(ngModel)]="student.niveauDEtude"
-      >
-        <option disabled selected>choisir niveau d'etude</option>
-        <option value="1">1 ere année</option>
-        <option value="2">2 eme année</option>
-        <option value="3">3 eme année</option>
-        <option value="4">4 eme année</option>
-        <option value="5">5 eme année</option>
-      </select>
-    </div>
-    <input class="btn btn-primary btn-block " type="submit" value="SUBMIT" />
-  </form>
+    </form>
+  </div>
 </div>

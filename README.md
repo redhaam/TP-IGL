@@ -1,6 +1,7 @@
 # TPIGL
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
+it's a MEAN web application to manage students and teachers in ESI.
 
 ## Development server
 
