@@ -1,13 +1,13 @@
-version: "3" # specify docker-compose version
+version: "3"
 
 # Define the services/containers to be run
 services:
   client:
-    build: ./TP-IGL
+    build: ./src
     ports:
       - "80:4200"
   server: # name of the first service
-    build: ./server # specify the directory of the Dockerfile
+    build: ./backend # specify the directory of the Dockerfile
     ports:
       - "8080:8080"
     environment:
