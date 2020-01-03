@@ -59,6 +59,7 @@ export class LoginService {
             }
           }
           if (nontrouv) {
+            this.id = "";
             this.currentuser = "";
             return "";
           } else {

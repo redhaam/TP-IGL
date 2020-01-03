@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         default:
           console.log(this.userType);
       }
-      let id = this.loginService.getUser(
+      const id = this.loginService.getUser(
         form.value.email,
         form.value.password,
         userType
