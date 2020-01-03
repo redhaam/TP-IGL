@@ -20,10 +20,10 @@ const routes: Routes = [
     component: UiEtudiantComponent
   },
   {
-    path: "feedback",
+    path: "etudiant/feedback",
     component: UiFeedbackComponent
   },
-  { path: "ajout-etudiant", component: StudentFormComponent },
+  { path: "admin/ajout-etudiant", component: StudentFormComponent },
   {
     path: "**",
     component: NotFoundComponent
