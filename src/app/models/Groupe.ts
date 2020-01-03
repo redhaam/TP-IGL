@@ -7,7 +7,7 @@ import { Edt } from "./emploi_temps";
 export interface Groupe {
   /**
    * Nom du groupe ( doit contenir le niveau d'etude + numéro séquentiel)
-   * **Exemple : 1CS07
+   * **Exemple : 1CS07 **
    */
   nom: string;
   /** Liste des étudiants appartenants à ce groupe */

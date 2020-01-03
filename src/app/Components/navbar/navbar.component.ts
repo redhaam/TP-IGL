@@ -1,9 +1,9 @@
+import { Component, OnInit } from "@angular/core";
+import { LoginService } from "src/app/Services/login.service";
 /**
  * Ce fichier représente le composant navbar (barre de navigation).
  * Affichée dans toutes les interfaces de l'application
  */
-import { Component, OnInit } from "@angular/core";
-import { LoginService } from "src/app/Services/login.service";
 
 @Component({
   selector: "app-navbar",

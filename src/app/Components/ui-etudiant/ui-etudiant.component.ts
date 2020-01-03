@@ -1,9 +1,9 @@
-/**
- * Ce fichier représente l'interface initiale de l'étudiant
- */
 import { Component, OnInit } from "@angular/core";
 import { LoginService } from "src/app/Services/login.service";
 import { Router } from "@angular/router";
+/**
+ * Ce fichier représente l'interface initiale de l'étudiant
+ */
 
 @Component({
   selector: "app-ui-etudiant",

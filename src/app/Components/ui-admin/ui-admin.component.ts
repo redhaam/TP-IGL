@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+/**
+ * Ce fichier représente l'interface initiale de l'administration
+ */
 
 @Component({
   selector: "app-ui-admin",

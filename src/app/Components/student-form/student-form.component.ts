@@ -5,6 +5,10 @@ import { StudentService } from "src/app/Services/student.service";
 import { FormsModule } from "@angular/forms";
 import { LoginService } from "src/app/Services/login.service";
 import { Router } from "@angular/router";
+/**
+ * Ce fichier représente l'interface d'ajout d'un étudiant
+ */
+
 @Component({
   selector: "app-student-form",
   templateUrl: "./student-form.component.html",
