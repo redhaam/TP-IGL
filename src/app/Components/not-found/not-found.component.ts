@@ -1,7 +1,7 @@
+import { Component, OnInit } from "@angular/core";
 /**
  * Ce fichier représente la page d'erreur (404 error) de l'application
  */
-import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-not-found",

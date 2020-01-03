@@ -4,6 +4,9 @@ import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
 import { User } from "../models/user";
 
+/**
+ * Ce fichier représente le service d'ajout d'un étudiant par l'administration
+ */
 @Injectable({
   providedIn: "root"
 })
@@ -30,6 +33,10 @@ export class StudentService {
       );
   }
 
+  /**
+   * Ajoute l'étudiant à la base de données
+   * @param student l'étudiant ajouté par l'administration
+   */
   public addStudent(student: Etudiant) {
     console.log(student);
     this.http

@@ -4,6 +4,10 @@ import { Administration } from "../models/Administration";
 import { Etudiant } from "../models/Etudiant";
 import { Router } from "@angular/router";
 
+/**
+ * Ce fichier représente le service d'authentification des utilisateur
+ */
+
 var user = user => {
   (this.id = user.id),
     (this.email = user.email),
@@ -15,14 +19,28 @@ var user = user => {
 })
 export class LoginService {
   constructor(private http: HttpClient, private router: Router) {}
+
+  /** l'identifiant de l'utilisateur */
   id: string;
+  /** nom et prenom de l'utilisateur connecté */
   currentuser: string;
+
+  /**
+   * Vérifie que l'utilisateur est authentifié
+   */
   public checkLogin() {
     if (!this.id) {
       this.router.navigate([""]);
     }
   }
 
+  /**
+   * Récupère les informations de l'utilisateur lors de l'authentification
+   * @param email l'email entré dans le formulaire par l'utilisateur
+   * @param pwd le mot de passe entré par l'utilisateur
+   * @param userType le type de l'utilisateur (etudiant, enseignant ou administration)
+   * @returns l'identifiant de l'utilisateur s'il existe , sinon chaîne vide
+   */
   public getUser(email: string, pwd: string, userType: number): string {
     let i = 0;
     let nontrouv = true;

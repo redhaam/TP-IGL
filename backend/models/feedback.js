@@ -1,8 +1,15 @@
+/**
+ * Represente la classe feedback (Schema )
+ */
 const mongoose = require("mongoose");
+/**
+ * @param nomModule Nom du module
+ * @param anneDetude l'année d'étude de l'étudiant qui envoie le feedback
+ * @param contenu le contenu du feedback
+ */
 const feedbackSchema = mongoose.Schema({
-  // la classe feedback (Schema )
-  nomModule: { type: String }, // le nom de module
-  anneDetude: { type: String }, // l'année d'etudiant de l'etudiant qui envoie le feedback
-  contenu: { type: String } // le contenu de feedback
+  nomModule: { type: String },
+  anneDetude: { type: String },
+  contenu: { type: String }
 });
 module.exports = mongoose.model("Feedback", feedbackSchema);

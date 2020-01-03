@@ -1,9 +1,9 @@
+import { Component, OnInit } from "@angular/core";
+import { LoginService } from "src/app/Services/login.service";
+
 /**
  * Ce ficheir représente l'interface initiale de l'enseignant
  */
-
-import { Component, OnInit } from "@angular/core";
-import { LoginService } from "src/app/Services/login.service";
 
 @Component({
   selector: "app-enseignant",

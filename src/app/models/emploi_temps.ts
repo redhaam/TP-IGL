@@ -1,6 +1,6 @@
 /**
  * Représente l'emploi du temps d'un groupe ou d'un enseignant
- * **Remarque d'implémentation : les détails d'une séance ont tous le même indice dans les differentes listes
+ * **Remarque d'implémentation : les détails d'une séance ont tous le même indice dans les differentes listes **
  * Exemple :
  * seances[i] = "8h30-9h30"
  * modules[i] = "IGL"

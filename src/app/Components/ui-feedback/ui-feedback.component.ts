@@ -1,13 +1,12 @@
-/**
- * Ce fichier représente l'interface que verra l'étudiant en donnant un feedback
- */
-
 import { Component, OnInit, Input, ViewChild } from "@angular/core";
 import { Feedback } from "src/app/models/Feedback";
 import { NgForm } from "@angular/forms";
 import { FeedbackService } from "../../Services/feedback.service";
 import { LoginService } from "src/app/Services/login.service";
 import { Router } from "@angular/router";
+/**
+ * Ce fichier représente l'interface que verra l'étudiant en donnant un feedback
+ */
 
 @Component({
   selector: "app-ui-feedback",

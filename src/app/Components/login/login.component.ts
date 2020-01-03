@@ -1,11 +1,11 @@
-/**
- * Ce fichier représente l'interface d'authentification de l'application
- */
 import { Component, ViewChild, OnInit, Input } from "@angular/core";
 import { User } from "../../models/user";
 import { NgForm } from "@angular/forms";
 import { LoginService } from "../../Services/login.service";
 import { Router } from "@angular/router";
+/**
+ * Ce fichier représente l'interface d'authentification de l'application
+ */
 
 @Component({
   selector: "app-login",
